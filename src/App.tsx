@@ -1,9 +1,10 @@
 
 
-import { Navbar } from "./components";
+import { Hero, Header,Coffee, Intro, Details,Meo,Footer} from "./components";
+import Packages from "./components/Packages";
 
 const styles = {
-  boxWidth: "mx-auto w-[1170px] ",
+  boxWidth: "lg:w-[1174px] max-w-full mx-auto ",
   flexCenter:"flex items-center justify-center",
   gridCol3:"grid grid-cols-1 lg: grid-cols-3 lg:",
   bigHeading:"no-underline text-[#3C0E0E] text-4xl font-semibold font-['Poppins'] leading-[56.52px] lg:text-pink-950 lg:text-[80px] lg:font-bold lg:leading-[83.60px]",
@@ -18,15 +19,48 @@ const styles = {
   marginY: "lg:my-16 my-6",
   buttonRounded:"min-w-[152px] min-h-12 bg-[#421A1A] rounded-full shadow",
   bg_primary:"bg-[#F7F2E8]",
-
+ 
 }
 
 const App = ()=>{
   return (
-   <div className=" bg-primary w-screen p-0 mx-auto border-box ">
-        <div className={`${styles.boxWidth} ${styles.flexCenter} ${styles.paddingX}`}>
-          <Navbar/>
+   <div className=" bg-primary w-full p-0 border-box font-poppins text-mainColor">
+        <div className={`${styles.boxWidth} ${styles.flexCenter} ${styles.paddingX} `}>
+          <Header/>
         </div>
+ 
+        <div className={`${styles.boxWidth} ${styles.flexCenter} ${styles.paddingX} ${styles.marginY}`}>
+          <Hero/>
+        </div>
+
+        <div className={`${styles.boxWidth} ${styles.flexCenter} ${styles.paddingX} ${styles.marginY}`}>
+          <Coffee/>
+        </div>
+
+        <div className={`${styles.boxWidth} ${styles.flexCenter} ${styles.paddingX} ${styles.marginY}`}>
+          <Intro/>
+        </div>
+
+        <div className={`${styles.boxWidth} ${styles.flexCenter} ${styles.paddingX} ${styles.marginY}`}>
+          <Packages/>
+        </div>
+
+        <div className="relative">
+        <div className={`${styles.boxWidth} ${styles.flexCenter} ${styles.paddingX} ${styles.marginY}`}>
+          <Details/>
+        </div>
+        </div>
+
+        <div className={`${styles.boxWidth} ${styles.flexCenter} ${styles.paddingX} ${styles.marginY}`}>
+          <Meo/>
+        </div>
+
+        <div className={`${styles.boxWidth} ${styles.flexCenter} ${styles.paddingX} `}>
+          <Footer/>
+        </div>
+
+
+
    </div>
   )
 }

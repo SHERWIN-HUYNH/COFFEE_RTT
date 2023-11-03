@@ -1,32 +1,26 @@
 
-import con_meo from '../assets/images/con_meo.png';
-
-
-const slideLeft = "cursor-pointer py-1 hover:text-gray-800 relative after:lg:absolute after:lg:bottom-0 after:lg:left-0 after:lg:bg-[#3C0E0E] after:lg:h-0.5 after:lg:w-0 hover:after:lg:w-full after:lg:transition-all after:lg:ease-in-out after:lg:duration-300";
-
-const Navbar = () => {
-  return (
-    <nav className=" px- flex items-center w-full justify-between">
-        <div className="flex items-center justify-start">
-            <figure className="lg:w-[191px] lg:h-[169px] w-[117px] h-[104px]">
-                <img className= "max-w-full object-cover"src={con_meo} alt="LOGO" />
-            </figure>
-
-            <ul className="flex items-center justify-center list-none gap-x-8">
-                <li className={slideLeft}><a className="no-underline text-xl lg:font-medium text-zinc-900  font-bold font-['Poppins']" href="#!">Meow Café</a></li>
-                <li className={slideLeft}><a className="no-underline text-xl lg:font-medium text-zinc-900  font-bold font-['Poppins']" href="#!">Início</a></li>
-                <li className={slideLeft}><a className="no-underline text-xl lg:font-medium text-zinc-900  font-bold font-['Poppins']" href="#!">Produtos</a></li>
-                <li className={slideLeft}><a className="no-underline text-xl lg:font-medium text-zinc-900  font-bold font-['Poppins']" href="#!">Sobre</a></li>
-            </ul>
-
-        </div>
+const NAVBAR = [
+    'Inicio',
+    'Produtos',
+    'Sobre',
+    'Blog'
+  ]
+  
+  export default function Navbar() {
+    return (
+      <>
+      
+      {NAVBAR.map(nav => (
+          <li className="py-4">
+             <a key={nav} href="#!" className="relative px-3 tracking-[0.5px]text-xl lg:font-bold text-zinc-900 lg:text-mainColor font-semibold after:content-['']
+              after:absolute after:bg-mainColor after:h-[3px] after:w-[0] after:left-[0] after:-bottom-[10px] after:[transition:0.3s] hover:after:w-full">
+            {nav}
+          </a>
+          </li>
+         
+        ))}
+     
        
-        <div className="flex items-center justify-center gap-x-4">
-            <button className=" bg-transparent border-none font-bold text-[#3C0E0E]">Login</button>
-            <button className="bg-[#3C0E0E] border-none rounded-full text-white px-6 py-2 lg:px-8 lg:py-3">Delivery</button>
-        </div>
-    </nav>
-  )
-}
-
-export default Navbar
+      </>
+    )
+  }

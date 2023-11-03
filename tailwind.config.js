@@ -7,7 +7,8 @@ export default {
       colors:{
         primary:"#F7F2E8",
         secondary:"#F9C4C4",
-        colorBut:"#421A1A"
+        colorBut:"#421A1A",
+        mainColor:"#3C0E0E"
       },
       fontFamily:{
         poppins:["Poppins","san-serif"]
